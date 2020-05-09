@@ -1,0 +1,30 @@
+<?php /** @var Magento\Framework\View\Element\Template $block */ ?>
+<div id="header">
+    <div class="container">
+        <h1>
+            <img src="<?= /* @noEscape */ $block->getViewFileUrl('Angeldm_Debug::images/magento.svg'); ?>" alt="Magento"/>
+            Magento 2
+            <span><?= $block->escapeHtml(__('Profiler')) ?></span>
+        </h1>
+    </div>
+    <div class="Angeldm">
+        <a href="http://Angeldm.com" target="_blank">
+            <img src="<?= /* @noEscape */ $block->getViewFileUrl('Angeldm_Debug::images/Angeldm.svg'); ?>" alt="Angeldm">
+            <h4>Angeldm.com</h4>
+        </a>
+    </div>
+</div>
+<div id="summary">
+    <?= $block->getChildHtml('debug_profiler_summary'); ?>
+</div>
+<div id="content" class="container">
+    <div id="main">
+        <div id="collector-wrapper">
+            <div id="collector-content">
+                <?= $block->getChildHtml('debug_profiler_panel'); ?>
+            </div>
+        </div>
+        <?= $block->getChildHtml('debug_profiler_sidebar'); ?>
+    </div>
+</div>
+<iframe name="profiler_link_target" style="display: none;"></iframe>
